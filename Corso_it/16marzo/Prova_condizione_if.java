@@ -17,7 +17,7 @@ public class Prova_condizione_if
         }
 
         int time=20;
-        if(time<18)
+        if(time<10)
         {
             System.out.println("Good day");
         }
