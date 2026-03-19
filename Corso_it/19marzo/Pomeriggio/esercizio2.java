@@ -36,19 +36,19 @@ public class esercizio2 {
             {
 
                 case 1:
-                    System.out.println("La somma è: "+somma(num1, num2));
+                    System.out.println("il risultato della somma è: "+somma(num1, num2));
                         break;
 
                 case 2:
-                        System.out.println("La Sottrazione è: "+sottrazione(num1, num2));
+                        System.out.println("il risultato della Sottrazione è: "+sottrazione(num1, num2));
                         break;
                     
                 case 3:
-                        System.out.println("La moltiplicazione è: "+moltiplicazione(num1, num2));
+                        System.out.println("il risultato della moltiplicazione è: "+moltiplicazione(num1, num2));
                         break;
 
                 case 4:
-                        System.out.println("La Divisione è: "+divisione(num1, num2));
+                        System.out.println("il risultato della Divisione è: "+divisione(num1, num2));
                         break;
                 case 5:
                         System.out.println("Arrivederci");
@@ -56,12 +56,10 @@ public class esercizio2 {
                         break;
 
                 default:
+                        //se utente mette case non esistente
                         System.out.println("Numero non valido");
             }
-            //se l'utente scrive 5 esce dal ciclo
-           
-
-            
+       
 
         }
 
@@ -91,8 +89,9 @@ public class esercizio2 {
         if(b==0)
         {
             System.out.println("Errore divisione per zero");
+            return 0;
         }
-        
+       
         return a/b;
         
     }
