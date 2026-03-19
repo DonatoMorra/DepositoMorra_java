@@ -1,18 +1,20 @@
 import java.util.Scanner;
 
-public class esercizio2 {
+public class Esercizio2 {
     public static void main(String[] args) {
 
-
+            //Scanner
             Scanner myint=new Scanner(System.in);
             Scanner mystr=new Scanner(System.in);
 
             boolean continua=true;
 
-            System.out.println("Inserisci 1 numero: ");
+            //chiedo utente
+            System.out.println("Inserisci primo numero: ");
             int num1=myint.nextInt();
 
-            System.out.println("Inserisci 2 numero: ");
+            //chiedo utente
+            System.out.println("Inserisci secondo numero: ");
             int num2=myint.nextInt();
 
         
@@ -20,7 +22,7 @@ public class esercizio2 {
         {   
            //menu classico
 
-             System.out.println("--Menu--");
+            System.out.println("--Menu--");
             System.out.println("1 - Somma");
             System.out.println("2 - Sottrazione");
             System.out.println("3 - moltiplicazione");
@@ -34,22 +36,23 @@ public class esercizio2 {
 
             switch (op) 
             {
-
+                    //somma
                 case 1:
                     System.out.println("il risultato della somma è: "+somma(num1, num2));
                         break;
-
+                    //Sottrazione
                 case 2:
                         System.out.println("il risultato della Sottrazione è: "+sottrazione(num1, num2));
                         break;
-                    
+                    //moltiplicazione
                 case 3:
                         System.out.println("il risultato della moltiplicazione è: "+moltiplicazione(num1, num2));
                         break;
-
+                    //Divisione
                 case 4:
                         System.out.println("il risultato della Divisione è: "+divisione(num1, num2));
                         break;
+                    //esci
                 case 5:
                         System.out.println("Arrivederci");
                         continua=false;
