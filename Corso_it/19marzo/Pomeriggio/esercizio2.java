@@ -50,15 +50,16 @@ public class esercizio2 {
                 case 4:
                         System.out.println("La Divisione è: "+divisione(num1, num2));
                         break;
-                    
+                case 5:
+                        System.out.println("Arrivederci");
+                        continua=false;
+                        break;
+
                 default:
                         System.out.println("Numero non valido");
             }
             //se l'utente scrive 5 esce dal ciclo
-           if(op==5)
-           {
-            continua=false;
-           }
+           
 
             
 
