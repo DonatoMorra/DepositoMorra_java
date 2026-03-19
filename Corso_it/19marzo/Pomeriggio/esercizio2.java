@@ -32,29 +32,29 @@ public class esercizio2 {
             int op=myint.nextInt();
 
 
-            switch (op) {
-                case 1:
+            switch (op) 
+            {
 
+                case 1:
                     System.out.println("La somma è: "+somma(num1, num2));
                         break;
-                case 2:
 
+                case 2:
                         System.out.println("La Sottrazione è: "+sottrazione(num1, num2));
                         break;
                     
                 case 3:
-
-                     
                         System.out.println("La moltiplicazione è: "+moltiplicazione(num1, num2));
                         break;
+
                 case 4:
                         System.out.println("La Divisione è: "+divisione(num1, num2));
-                        
+                        break;
                     
                 default:
                         System.out.println("Numero non valido");
             }
-
+            //se l'utente scrive 5 esce dal ciclo
            if(op==5)
            {
             continua=false;
