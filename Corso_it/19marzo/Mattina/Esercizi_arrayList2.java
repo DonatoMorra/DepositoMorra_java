@@ -40,11 +40,11 @@ public class Esercizi_arrayList2 {
                         
                         //se la parola e fine esce dal inserire nome e la parola fine viene cancellata dalla lista
                         if(nome.equalsIgnoreCase("fine"))
-                      {
+                    {
                         nomi.remove("fine");
                         cont=false;
                              break;
-                      }  
+                    }  
                     }
                         break;
 
@@ -88,20 +88,15 @@ public class Esercizi_arrayList2 {
 
                         break;
                 case 5:
+                //Saluto romano
                         System.out.println("Arrivederci");
                         continua=false;
                         break;
+                        //se tra i segueni numeri non ce il caso va in default
                     default:
                         System.out.println("Numero inserito non valido");
                         
                 }
-
-
-
-                
-
-
-
 
             
         }
