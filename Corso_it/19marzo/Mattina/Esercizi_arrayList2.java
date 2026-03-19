@@ -58,6 +58,8 @@ public class Esercizi_arrayList2 {
                     }
                         break;
                 case 3:
+                        //cerca nome
+                        
                         System.out.println("Quale nome vuoi cercare?: ");
                         String cerca=mystr.nextLine();
 
@@ -72,7 +74,7 @@ public class Esercizi_arrayList2 {
                        break;
                     
                 case 4: 
-
+                            //rimuove nome
                             System.out.println("Quale nome vuoi rimuovere?: ");
                             System.out.println(nomi);
 
