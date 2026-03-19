@@ -50,16 +50,20 @@ public class Esercizi_arrayList2 {
 
                 case 2: 
 
-                        System.out.println("Nome " + nomi);
+                       
                     
                     if(nomi.isEmpty())
                     {
                         System.out.println("Lista vuota");
                     }
+                    else
+                    {
+                         System.out.println("Nomi " + nomi);
+                    }
                         break;
                 case 3:
                         //cerca nome
-                        
+
                         System.out.println("Quale nome vuoi cercare?: ");
                         String cerca=mystr.nextLine();
 
@@ -79,6 +83,12 @@ public class Esercizi_arrayList2 {
                             System.out.println(nomi);
 
                             String rimuovi=mystr.nextLine();
+
+                            if(nomi.isEmpty())
+                            {
+                                System.out.println("Lista vuota");
+                            }
+
                             if(nomi.remove(rimuovi))
                                 {
                                      System.out.println("Nome rimosso");
