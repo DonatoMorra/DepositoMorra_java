@@ -79,28 +79,47 @@ public class PrimoTest {
                     break;
                 case 3:
 
-                         System.out.println("Quale prodotto stai cercando?: ");
-                        String nome_prod=mystr.nextLine();
-
-                        for(int i=0; i<nomi_prodotti.size(); i++)
-                        {
-                             if(nomi_prodotti.get(i).equals(nome_prod))
-                             {
-                              System.out.println("Prodotto trovato: ");
-                              System.out.println(nomi_prodotti.get(i));
-                              break;
-                              }
-
-                        else
-                        {
-                            System.out.println("Prodotto non trovato");
-                            break;
-                        }
-                        }
+                        cerca(nomi_prodotti,quantita);
                         break;
                                       
                 case 4:
-                            System.out.println("Quale prodotto vuoi modificare la quantita?: ");
+
+                           modifica(nomi_prodotti, quantita);
+                            break;
+
+                case 5:
+
+                           elimina(nomi_prodotti,quantita);
+                                break;
+
+                case 6:
+
+                           System.out.println("La somma dei prodotti é: " + totprezzo(quantita));
+                            break;
+                    
+                
+                case 7:
+                
+                            System.out.println("Arrivederci");
+                            continuta=false;
+
+                    break;
+                
+                default:
+                    System.out.println("Operazione non trovata");
+            }
+
+        }
+    }
+
+
+
+    static void modifica(ArrayList<String> nomi_prodotti,ArrayList<Integer> quantita)
+    {
+        Scanner mystr= new Scanner(System.in);
+        Scanner myint= new Scanner(System.in);
+
+         System.out.println("Quale prodotto vuoi modificare la quantita?: ");
                             String mod=mystr.nextLine();
 
                             for (int i=0; i<nomi_prodotti.size(); i++)
@@ -122,10 +141,56 @@ public class PrimoTest {
                                 }
 
                             }
+                            myint.close();
+                            mystr.close();
 
-                    break;
-                case 5:
-                            System.out.println("Dimmi il prodotto che vuoi eliminare");
+    }
+
+
+
+    static void cerca(ArrayList<String> nomi_prodotti,ArrayList<Integer> quantita )
+    {
+         Scanner mystr= new Scanner(System.in);
+         System.out.println("Quale prodotto stai cercando?: ");
+                        String nome_prod=mystr.nextLine();
+
+                        for(int i=0; i<nomi_prodotti.size(); i++)
+                        {
+                             if(nomi_prodotti.get(i).equals(nome_prod))
+                             {
+                              System.out.println("Prodotto trovato: ");
+                              System.out.println(nomi_prodotti.get(i));
+                              break;
+                              }
+
+                        else
+                        {
+                            System.out.println("Prodotto non trovato");
+                            break;
+                        }
+                        }
+                    mystr.close();
+
+    }
+
+
+    static int  totprezzo(ArrayList<Integer> prodotti)
+        {
+            int somma=0;
+            for(int i=0; i<prodotti.size(); i++)
+            {
+                somma += prodotti.get(i);
+            }
+            return somma;
+        }   
+
+
+
+
+    static void elimina(ArrayList<String> nomi_prodotti,ArrayList<Integer> quantita )
+    {
+             Scanner mystr= new Scanner(System.in);
+         System.out.println("Dimmi il prodotto che vuoi eliminare");
                             String canc=mystr.nextLine();
 
                              for (int i=0; i<nomi_prodotti.size(); i++)
@@ -143,38 +208,8 @@ public class PrimoTest {
                                     break;
                                 }
                             }
-                                break;
+                            mystr.close();
 
-                case 6:
-
-                           System.out.println("La somma dei prodotti e" + totprezzo(quantita));
-                            break;
-                    
-                
-                case 7:
-                            System.out.println("Arrivederci");
-                            continuta=false;
-
-                    break;
-                
-                default:
-                    System.out.println("Operazione non trovata");
-            }
-
-
-
-        }
     }
-
-
-    static int  totprezzo(ArrayList<Integer> prodotti)
-        {
-            int somma=0;
-            for(int i=0; i<prodotti.size(); i++)
-            {
-                somma += prodotti.get(i);
-            }
-            return somma;
-        }
     
 }
