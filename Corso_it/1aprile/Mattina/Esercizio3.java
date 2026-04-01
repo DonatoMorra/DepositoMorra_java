@@ -1,19 +1,206 @@
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Esercizio3 
 {
     public static void main(String[] args) {
         
+        Scanner myint=new Scanner(System.in);
+        Scanner mystr=new Scanner(System.in);
+
+        ArrayList<capo_principale>cp=new ArrayList<>();
 
         gestione_principale gp=new gestione_principale();
 
+ /*    
+         giacca g = new giacca(2);
+        g.setNome("Smoking");
+        g.setColore("Nero");
+        g.setPrezzo(200);
+        g.setTaglia(48);
+        g.setTessuto("Lana");
+
+        pantalone p = new pantalone("Slim");
+        p.setNome("Pantalone elegante");
+        p.setColore("Nero");
+        p.setPrezzo(100);
+        p.setTaglia(48);
+        p.setTessuto("Cotone");
 
 
-        
+        gp.utilizza_gestione(g);
+        gp.utilizza_gestione(p);
+   */ 
+   
+  
+    ///* 
+    boolean continua=true;
+        while (continua) 
+        {
+                System.out.println("\n=== MENU ===");
+            System.out.println("1 - Aggiungi Giacca");
+            System.out.println("2 - Aggiungi Pantalone");
+            System.out.println("3 - Aggiungi Gilet");
+            System.out.println("4 - Mostra tutti i capi");
+            System.out.println("5 - Esci");
+
+                System.out.println("Cosa vuoi fare?: ");
+                int scelta=myint.nextInt();
+
+            switch (scelta) {
+                case 1:
+                    System.out.print("Nome: ");
+                    String nomeG = mystr.nextLine();
+
+                    System.out.print("Colore: ");
+                    String coloreG = mystr.nextLine();
+
+                    System.out.print("Tessuto: ");
+                    String tessutoG = mystr.nextLine();
+
+                    System.out.print("Taglia: ");
+                    double tagliaG = myint.nextDouble();
+
+                    System.out.print("Prezzo: ");
+                    double prezzoG = myint.nextDouble();
+
+                    System.out.print("Numero bottoni: ");
+                    int bottoni = myint.nextInt();
+                    
+                    if(nomeG.isEmpty() || coloreG.isEmpty() || tessutoG.isEmpty() || tagliaG<0 || prezzoG<0 || bottoni<0)
+                    {
+                        System.out.println("Dati non validi");
+                    }
+                    else
+                    {   
+                        giacca g = new giacca(bottoni);
+                        g.setNome(nomeG);
+                        g.setColore(coloreG);
+                        g.setPrezzo(prezzoG);
+                        g.setTaglia(tagliaG);
+                        g.setTessuto(tessutoG);
+
+                        cp.add(g);
+                        break;
+                    }
+                break;
+                case 2:
+
+                         System.out.print("Nome: ");
+                    String nomeP = mystr.nextLine();
+
+                    System.out.print("Colore: ");
+                    String coloreP = mystr.nextLine();
+
+                    System.out.print("Tessuto: ");
+                    String tessutoP = mystr.nextLine();
+
+                    System.out.print("Taglia: ");
+                    double tagliaP = myint.nextDouble();
+
+                    System.out.print("Prezzo: ");
+                    double prezzoP = myint.nextDouble();
+
+                    System.out.print("Tipo taglio: ");
+                    String tipo_taglio = mystr.nextLine();
+                    
+                      if(nomeP.isEmpty() || coloreP.isEmpty() || tessutoP.isEmpty() || tagliaP<0 || prezzoP<0 || tipo_taglio.isEmpty())
+                    {
+                        System.out.println("Dati non validi");
+                    }
+                    else
+                    {   
+                        pantalone p = new pantalone(tipo_taglio);
+                        p.setNome(nomeP);
+                        p.setColore(coloreP);
+                        p.setPrezzo(prezzoP);
+                        p.setTaglia(tagliaP);
+                        p.setTessuto(tessutoP);
+
+                        cp.add(p);
+                        break;
+                    }
 
 
+                break;
+                 case 3:
+                        System.out.print("Nome: ");
+                    String nomeGl = mystr.nextLine();
+
+                    System.out.print("Colore: ");
+                    String coloreGl = mystr.nextLine();
+
+                    System.out.print("Tessuto: ");
+                    String tessutoGl = mystr.nextLine();
+
+                    System.out.print("Taglia: ");
+                    double tagliaGl = myint.nextDouble();
+
+                    System.out.print("Prezzo: ");
+                    double prezzoGl = myint.nextDouble();
+
+                    System.out.print("Rever presente (true/false): ");
+                    boolean rever = myint.nextBoolean();
+
+                    if(rever==false)
+                    {
+                        System.out.println("Revers non presente");
+                    }
+                    else
+                    {
+                        System.out.println("Revers presente");
+                    }
+                    
+                    if(nomeGl.isEmpty() || coloreGl.isEmpty() || tessutoGl.isEmpty() || tagliaGl<0 || prezzoGl<0)
+                    {
+                        System.out.println("Dati non validi");
+                    }
+                    else
+                    {   
+                        gilet gl = new gilet(rever);
+                        gl.setNome(nomeGl);
+                        gl.setColore(coloreGl);
+                        gl.setTessuto(tessutoGl);
+                        gl.setTaglia(tagliaGl);
+                        gl.setPrezzo(prezzoGl);
+                        gl.setReverpresente(rever);
+                    
+                        cp.add(gl);
+                        break;
+                    }
 
 
+                break;
+                case 4:
 
+                    if(cp.isEmpty())
+                    {
+                        System.out.println("nessun capo esistente");
+                        break;
+                    }
+                    else{
+                    
+                    for(capo_principale c: cp)
+                    {
+                        gp.utilizza_gestione(c);
+                        System.out.println("---------------");
 
+                    }
+                    }
+                 break;
+                 case 5:
+                        System.out.println("Arrivederci");
+                        continua=false;
+                        break;
+
+                default:
+                    System.out.println("Caso non trovato");
+            }
+
+            
+        }
+        //*/
 
     }
     
@@ -28,8 +215,6 @@ class gestione_principale
 
 
 }
-
-
 
 
 // prima classe principale
@@ -57,8 +242,11 @@ class capo_principale extends gestore_oggetti
         if(nome.isBlank() || nome.isEmpty())
         {
             System.out.println("Nome non puo essere vuoto");
+            return;
         }
+        
         this.nome = nome;
+        
     }
     public String getTessuto() {
         return tessuto;
@@ -100,10 +288,11 @@ class capo_principale extends gestore_oggetti
     public void setPrezzo(double prezzo) 
     {
         
-        if(!(prezzo<=0))
+        if(prezzo<=0)
         {
             System.out.println("prezzo non valido");
         }
+        
         this.prezzo = prezzo;
     }
     
@@ -132,6 +321,7 @@ class giacca extends capo_principale
 
     void mostra_dettagli()
     {
+        super.mostra_dettagli();
         System.out.println("Numero bottoni: "+numero_bottoni);
     }
 
@@ -152,6 +342,7 @@ class pantalone extends  capo_principale
     
     void mostra_dettagli()
     {
+        super.mostra_dettagli();
         System.out.println("tipo taglio: "+tipo_taglio);
     }
 
@@ -172,7 +363,18 @@ class gilet extends capo_principale
     
     void mostra_dettagli()
     {
+        super.mostra_dettagli();
         System.out.println("Reversibile: "+reverpresente);
+    }
+
+
+    public boolean isReverpresente() {
+        return reverpresente;
+    }
+
+
+    public void setReverpresente(boolean reverpresente) {
+        this.reverpresente = reverpresente;
     }
 
 }
@@ -201,8 +403,11 @@ class componenti_finitura extends gestore_oggetti
         if(nome.isBlank() || nome.isEmpty())
         {
             System.out.println("Nome non puo essere vuoto");
+            return;
         }
+        
         this.nome = nome;
+        
     }
     public String getMateriale() {
         return materiale;
@@ -225,7 +430,7 @@ class componenti_finitura extends gestore_oggetti
     }
     public void setPrezzo(double prezzo) 
     {
-          if(!(prezzo<=0))
+          if(prezzo<=0)
         {
             System.out.println("prezzo non valido");
         }
@@ -237,10 +442,10 @@ class componenti_finitura extends gestore_oggetti
      void mostra_dettagli()
     {
         System.out.println("Codice: "+codice);
-        System.out.println("Nome: "+nome);
-        System.out.println("Materiale: "+materiale);
-        System.out.println("Colore: "+colore);
-        System.out.println("Prezzo: "+prezzo);
+        System.out.println("Nome: "+ nome);
+        System.out.println("Materiale: "+ materiale);
+        System.out.println("Colore: "+ colore);
+        System.out.println("Prezzo: "+ prezzo);
     }
     
 }
@@ -258,6 +463,7 @@ class cravatta extends componenti_finitura
     
     void mostra_dettagli()
     {
+        super.mostra_dettagli();
         System.out.println("Larghezza cravatta: "+larghezza);
     }
     
@@ -276,7 +482,8 @@ class papillon extends componenti_finitura
 
     
     void mostra_dettagli()
-    {
+    {   
+        super.mostra_dettagli();
         System.out.println("tipo chiusura: "+tipo_chiusura);
     }
 
@@ -296,6 +503,7 @@ class pochette extends componenti_finitura
     
     void mostra_dettagli()
     {
+        super.mostra_dettagli();
         System.out.println("piega_decorativa: "+piega_decorativa);
     }
 }
