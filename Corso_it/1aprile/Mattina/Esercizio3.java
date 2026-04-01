@@ -9,11 +9,10 @@ public class Esercizio3
         Scanner myint=new Scanner(System.in);
         Scanner mystr=new Scanner(System.in);
 
-        ArrayList<capo_principale>cp=new ArrayList<>();
-
+        ArrayList<prodotto>cp=new ArrayList<>();
         gestione_principale gp=new gestione_principale();
 
- /*    
+ /*    prova per visuallizzare i capi 
          giacca g = new giacca(2);
         g.setNome("Smoking");
         g.setColore("Nero");
@@ -43,13 +42,18 @@ public class Esercizio3
             System.out.println("2 - Aggiungi Pantalone");
             System.out.println("3 - Aggiungi Gilet");
             System.out.println("4 - Mostra tutti i capi");
-            System.out.println("5 - Esci");
+            System.out.println("5 - Aggiungi Cravatta");
+            System.out.println("6 - Aggiungi Papillon");
+            System.out.println("7 - Aggiungi Pochette");
+            System.out.println("8 - Esci");
 
                 System.out.println("Cosa vuoi fare?: ");
                 int scelta=myint.nextInt();
 
             switch (scelta) {
+                //inserisco Giacca
                 case 1:
+
                     System.out.print("Nome: ");
                     String nomeG = mystr.nextLine();
 
@@ -85,8 +89,9 @@ public class Esercizio3
                         break;
                     }
                 break;
+                
                 case 2:
-
+                        //inserisco Pantalone
                          System.out.print("Nome: ");
                     String nomeP = mystr.nextLine();
 
@@ -125,6 +130,7 @@ public class Esercizio3
 
                 break;
                  case 3:
+                        //inserisco gilet
                         System.out.print("Nome: ");
                     String nomeGl = mystr.nextLine();
 
@@ -173,7 +179,7 @@ public class Esercizio3
 
                 break;
                 case 4:
-
+                    //visualizzo capi
                     if(cp.isEmpty())
                     {
                         System.out.println("nessun capo esistente");
@@ -181,15 +187,120 @@ public class Esercizio3
                     }
                     else{
                     
-                    for(capo_principale c: cp)
+                    for(prodotto p: cp)
                     {
-                        gp.utilizza_gestione(c);
+                        gp.utilizza_gestione(p);
                         System.out.println("---------------");
 
                     }
                     }
                  break;
                  case 5:
+                          //inserisco cravatta
+                         System.out.print("Nome: ");
+                         String nomeC = mystr.nextLine();
+
+                         System.out.print("Materiale: ");
+                         String materialeC = mystr.nextLine();
+
+                         System.out.print("Colore: ");
+                         String coloreC = mystr.nextLine();
+
+                         System.out.print("Prezzo: ");
+                         double prezzoC = myint.nextDouble();
+                         myint.nextLine();
+
+                         System.out.print("Larghezza: ");
+                         double larghezza = myint.nextDouble();
+                         myint.nextLine();
+
+                         if(nomeC.isEmpty() || materialeC.isEmpty() || coloreC.isEmpty() || prezzoC < 0 || larghezza < 0)
+                         {
+                            System.out.println("Dati non validi");
+                         }
+                        else
+                         {
+                            cravatta c = new cravatta(larghezza);
+                            c.setNome(nomeC);
+                            c.setMateriale(materialeC);
+                            c.setColore(coloreC);
+                            c.setPrezzo(prezzoC);
+
+                                cp.add(c);
+                         }
+
+                 break;
+                 case 6:
+                   //inserisco papillon
+                         System.out.print("Nome: ");
+                         String nomePa = mystr.nextLine();
+
+                         System.out.print("Materiale: ");
+                         String materialePa = mystr.nextLine();
+
+                         System.out.print("Colore: ");
+                         String colorePa = mystr.nextLine();
+
+                         System.out.print("Prezzo: ");
+                         double prezzoPa = myint.nextDouble();
+                         myint.nextLine();
+
+                         System.out.print("Tipo chiusura: ");
+                         String chiusura = mystr.nextLine();
+
+                        if(nomePa.isEmpty() || materialePa.isEmpty() || colorePa.isEmpty() || prezzoPa < 0 || chiusura.isEmpty())
+                        {
+                            System.out.println("Dati non validi");
+                        }
+                        else
+                        {
+                            papillon pa = new papillon(chiusura);
+                            pa.setNome(nomePa);
+                            pa.setMateriale(materialePa);
+                            pa.setColore(colorePa);
+                            pa.setPrezzo(prezzoPa);
+
+                            cp.add(pa);
+                        }
+
+                 break;
+                 case 7:
+                          //inserisco pochette
+                          System.out.print("Nome: ");
+                          String nomePo = mystr.nextLine();
+
+                          System.out.print("Materiale: ");
+                          String materialePo = mystr.nextLine();
+
+                          System.out.print("Colore: ");
+                          String colorePo = mystr.nextLine();
+
+                          System.out.print("Prezzo: ");
+                          double prezzoPo = myint.nextDouble();
+                          myint.nextLine();
+
+                          System.out.print("Piega decorativa (true/false): ");
+                          boolean piega = myint.nextBoolean();
+                          myint.nextLine();
+
+                        if(nomePo.isEmpty() || materialePo.isEmpty() || colorePo.isEmpty() || prezzoPo < 0)
+                        {
+                            System.out.println("Dati non validi");
+                        }
+                        else
+                        {
+                            pochette po = new pochette(piega);
+                            po.setNome(nomePo);
+                            po.setMateriale(materialePo);
+                            po.setColore(colorePo);
+                            po.setPrezzo(prezzoPo);
+
+                            cp.add(po);
+                        }
+                 break;
+  
+                 case 8:
+                 //ciao
                         System.out.println("Arrivederci");
                         continua=false;
                         break;
@@ -200,25 +311,34 @@ public class Esercizio3
 
             
         }
-        //*/
+        // */
 
+
+        //chiudo scanner
+        myint.close();
+        mystr.close();
     }
     
 }
 
 class gestione_principale 
 {
-    void utilizza_gestione(capo_principale c)
+    void utilizza_gestione(prodotto p)
     {
-        c.mostra_dettagli();
+        p.mostra_dettagli();
     }
 
+}
+
+class prodotto
+{
+    void mostra_dettagli(){}
 
 }
 
 
 // prima classe principale
-class capo_principale extends gestore_oggetti
+class capo_principale extends prodotto
 {
     private int codice;
     private String nome;
@@ -262,6 +382,7 @@ class capo_principale extends gestore_oggetti
         if(colore.isBlank() || colore.isEmpty())
         {
             System.out.println("Colore non puo essere vuoto");
+            return;
         }
           this.colore = colore;
 
@@ -381,7 +502,7 @@ class gilet extends capo_principale
 
 
 // seconda classe principale
-class componenti_finitura extends gestore_oggetti
+class componenti_finitura extends prodotto
 {
     private int codice;
     private String nome;
@@ -422,6 +543,7 @@ class componenti_finitura extends gestore_oggetti
          if(colore.isBlank() || colore.isEmpty())
         {
             System.out.println("Colore non puo essere vuoto");
+            return;
         }
           this.colore = colore;
     }
