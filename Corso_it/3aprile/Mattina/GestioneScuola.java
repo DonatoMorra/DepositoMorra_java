@@ -69,6 +69,7 @@ public class GestioneScuola {
                         {   
                             //aggiungo al docente con indice lo studente
                             docenti.get(in).aggiungiStudente(stu);
+                            System.out.println("Studente assegnato");
                             break;
                         }    
                         else
