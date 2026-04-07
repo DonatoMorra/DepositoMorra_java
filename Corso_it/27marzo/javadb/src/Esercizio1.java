@@ -4,7 +4,7 @@ public class Esercizio1 {
     public static void main(String[] args) {
         
 
-         String url="jdbc:mysql://localhost:3306/sakila";
+        String url="jdbc:mysql://localhost:3306/sakila";
         String user="root";
         String psw="";
 
