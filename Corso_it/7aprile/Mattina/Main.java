@@ -3,9 +3,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) 
     {
-     
+        //Scanner
         Scanner myint=new Scanner(System.in);
 
+        //chiamo l'istanza
         Logger log1=Logger.getInstanza();
         log1.ScriviMessaggio("Sono il primo messaggio");
 
