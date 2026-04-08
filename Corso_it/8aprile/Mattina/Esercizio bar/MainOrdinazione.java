@@ -54,7 +54,7 @@ public class MainOrdinazione {
                         case 2: bevandaCorrente = new te(); break;
                         case 3: bevandaCorrente = new Cioccolata(); break;
                         default: 
-                            System.out.println("Bevanda non valida!");
+                            System.out.println("Bevanda non valida");
                             bevandaCorrente = null;
                     }
 
@@ -89,7 +89,7 @@ public class MainOrdinazione {
                             case 3: bevandaCorrente = new PannaDecorator(bevandaCorrente); break;
                             case 4: bevandaCorrente = new CannellaDecorator(bevandaCorrente); break;
                             case 5: cont = false; break;
-                            default: System.out.println("Ingrediente non valido!"); 
+                            default: System.out.println("Ingrediente non valido"); 
                         }
                     }
                     break;
