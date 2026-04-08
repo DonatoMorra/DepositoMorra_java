@@ -42,10 +42,11 @@ interface Bevanda {
 */
 class Caffe implements Bevanda {
 
+    @Override
     public String getDescrizione() {
         return "Caffè";
     }
-
+     @Override
     public double getCosto() {
         return 1.0;
     }
@@ -75,11 +76,11 @@ class Latte extends Decoratore {
     public Latte(Bevanda bevanda) {
         super(bevanda);
     }
-
+     @Override
     public String getDescrizione() {
         return bevanda.getDescrizione() + " + Latte";
     }
-
+     @Override
     public double getCosto() {
         return bevanda.getCosto() + 0.5;
     }
@@ -95,11 +96,11 @@ class Zucchero extends Decoratore {
     public Zucchero(Bevanda bevanda) {
         super(bevanda);
     }
-
+     @Override
     public String getDescrizione() {
         return bevanda.getDescrizione() + " + Zucchero";
     }
-
+     @Override
     public double getCosto() {
         return bevanda.getCosto() + 0.2;
     }

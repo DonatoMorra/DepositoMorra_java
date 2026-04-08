@@ -1,51 +1,38 @@
-public class Esercizio_Decorator {
-        public static void main(String[] args) 
-        {
-
-           
-            
-        }
-}
-//interfaccia
-interface Messaggio
-{
+// interfaccia
+interface Messaggio {
     String getContenuto();
 }
 
-//classe concreta
-abstract class MessaggioBase implements Messaggio
-{
-    public String getcontenuto()
-    {
-        return "Messaggio semplice";
+// classe concreta
+class MessaggioBase implements Messaggio {
+    private String contenuto;
+
+    public MessaggioBase(String contenuto) {
+        this.contenuto = contenuto;
+    }
+
+    public String getContenuto() {
+        return contenuto;
     }
 }
 
-//classe astratta decorator
-abstract class DecoratoreMessaggio implements  Messaggio
-{
-    protected  Messaggio messaggio;
+// classe astratta decorator
+abstract class DecoratoreMessaggio implements Messaggio {
+    protected Messaggio messaggio;
 
     public DecoratoreMessaggio(Messaggio messaggio) {
         this.messaggio = messaggio;
     }
-    
 }
 
-//Decoratore
-class DecoratoreMaiuscolo extends DecoratoreMessaggio 
-{
+// decoratore
+class DecoratoreMaiuscolo extends DecoratoreMessaggio {
 
-    public DecoratoreMaiuscolo(Messaggio messaggio)
-    {
+    public DecoratoreMaiuscolo(Messaggio messaggio) {
         super(messaggio);
     }
 
-    public String getContenuto()
-    {
+    public String getContenuto() {
         return messaggio.getContenuto().toUpperCase();
     }
-
-
-}    
-
+}
