@@ -11,8 +11,8 @@ class EvasioneNormale implements StrategiaEvasione
     public void eseguiEvasione(double prezzo)
     {
 
-        double tot = prezzo + prezzo * 0.05;
-        System.out.println("Ordine evaso con procedura standard: " + tot + " + 5%");
+       ;
+        System.out.println("Ordine evaso con procedura standard: " + (prezzo * 1.05) + " + 5%");
     }
 }
 //Context per la strategia prioritaria
@@ -20,8 +20,8 @@ class EvasionePrioritaria implements StrategiaEvasione
 {
     public void eseguiEvasione(double prezzo)
     {
-        double tot = prezzo + prezzo * 0.15;
-        System.out.println("Ordine evaso con procedura prioritaria: " + tot + " + 15%");
+        
+        System.out.println("Ordine evaso con procedura prioritaria: " + (prezzo * 1.15) + " + 15%");
     }
 }
 //Context per la strategia controllata
@@ -29,8 +29,8 @@ class EvasioneControllata implements StrategiaEvasione
 {
     public void eseguiEvasione(double prezzo)
     {
-        double tot = prezzo - prezzo * 0.05;
-        System.out.println("Ordine evaso con procedura controllata: " + tot + " - 5%");
+      
+        System.out.println("Ordine evaso con procedura controllata: " + (prezzo * 0.95) + " - 5%");
     }
 }
 //class che rappresenta l'ordine, che funge da context per la strategia
