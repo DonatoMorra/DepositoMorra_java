@@ -1,5 +1,4 @@
 package EsercizioStategyD;
-
 import java.util.*;
 
 //interfaccia Observer
