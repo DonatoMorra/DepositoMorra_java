@@ -1,10 +1,10 @@
 package Esercizio_Serio_facade.Decorator;
 
 //extra computer ram
- class RamExtra extends ComputerExtraDecorator
+public class RamExtra extends ComputerExtraDecorator
 {
 
-    RamExtra(Computer computer) {
+    public RamExtra(Computer computer) {
         super(computer);
     }
 

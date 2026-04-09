@@ -1,55 +1,35 @@
-package Esercizio_Serio_facade.Main;
-import Esercizio_Serio_facade.Facade.SistemaFacade;
+package esercizio_serio_facade.main;
+
+import esercizio_serio_facade.facade.SistemaFacade;
 import java.util.Scanner;
 
 public class Main_EsercizioD {
     public static void main(String[] args) {
-        
-        Scanner mystr=new Scanner(System.in);
-        SistemaFacade sistema=new SistemaFacade();
-
+        Scanner mystr = new Scanner(System.in);
+        SistemaFacade sistema = new SistemaFacade();
 
         System.out.println("Come lo vuoi il computer? (ufficio/gaming)");
-        String risposta=mystr.nextLine();
+        String risposta = mystr.nextLine();
         sistema.creaComputerBase(risposta);
 
         System.out.println("Vuoi aggiungere ram? (si/no)");
-        String rispostaRam=mystr.nextLine();
-        if(rispostaRam.equalsIgnoreCase("si"))
-        {
-            System.out.println("Ram aggiunta");
-            sistema.aggiungiRam();              
-        }
-        System.out.println("Vuoi aggiungere ssd? (si/no)");
-        String rispostaSsd=mystr.nextLine();
-        if(rispostaSsd.equalsIgnoreCase("si"))
-        {
-            System.out.println("ssd aggiunta");
-            sistema.aggiungiSSD();              
-        }
-        System.out.println("Vuoi aggiungere scheda video? (si/no)");
-        String rispostaSchedaVideo=mystr.nextLine();
-        if(rispostaSchedaVideo.equalsIgnoreCase("si"))
-        {
-            System.out.println("Scheda video aggiunta");
-            sistema.aggiungiSchedaVideo();              
-        }
-        System.out.println("Vuoi aggiungere raffreddamento? (si/no)");
-        String rispostaRaffreddamento=mystr.nextLine();
-        if(rispostaRaffreddamento.equalsIgnoreCase("si"))
-        {
-            System.out.println("Raffreddamento aggiunto");
-            sistema.aggiungiRaffreddamento();
-        }
-        System.out.println("Come vuoi pagare? (carta/paypal/bonifico)");
-        String rispostaPagamento=mystr.nextLine();
+        if(mystr.nextLine().equalsIgnoreCase("si")) sistema.aggiungiRam();
 
-        sistema.scegliPagamento(rispostaPagamento);
+        System.out.println("Vuoi aggiungere ssd? (si/no)");
+        if(mystr.nextLine().equalsIgnoreCase("si")) sistema.aggiungiSSD();
+
+        System.out.println("Vuoi aggiungere scheda video? (si/no)");
+        if(mystr.nextLine().equalsIgnoreCase("si")) sistema.aggiungiSchedaVideo();
+
+        System.out.println("Vuoi aggiungere raffreddamento? (si/no)");
+        if(mystr.nextLine().equalsIgnoreCase("si")) sistema.aggiungiRaffreddamento();
+
+        System.out.println("Come vuoi pagare? (carta/paypal/bonifico)");
+        sistema.scegliPagamento(mystr.nextLine());
 
         sistema.riepilogoOrdine();
-       
         sistema.confermaOrdine();
 
+        mystr.close();
     }
-    
 }

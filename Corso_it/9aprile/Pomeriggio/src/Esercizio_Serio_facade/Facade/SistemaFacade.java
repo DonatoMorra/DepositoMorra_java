@@ -1,46 +1,39 @@
-package Esercizio_Serio_facade.Facade;
+package Esercizio_Facade.facade;
 
-import Esercizio_Serio_facade.Decorator.*;
-import Esercizio_Serio_facade.Strategy.*;
-
-
+import esercizio_serio_facade.decorator.*;
+import esercizio_serio_facade.strategy.*;
 
 public class SistemaFacade {
 
     private Computer computer;
     private StrategiaPagamento strategiaPagamento;
 
-    // 1. Creazione computer base
     public void creaComputerBase(String tipo) {
-        if (tipo.equalsIgnoreCase("ufficio")) 
-        {
+        if (tipo.equalsIgnoreCase("ufficio")) {
             computer = new ComputerBaseUfficio();
-        } else if (tipo.equalsIgnoreCase("gaming")) 
-        {
+        } else if (tipo.equalsIgnoreCase("gaming")) {
             computer = new ComputerBaseGaming();
         } else {
             throw new IllegalArgumentException("Tipo non valido");
         }
     }
 
-    // 2. Aggiunta extra
     public void aggiungiRam() {
         computer = new RamExtra(computer);
     }
 
     public void aggiungiSSD() {
-        computer = new ssdExtra(computer);
+        computer = new SsdExtra(computer);
     }
 
     public void aggiungiSchedaVideo() {
-        computer = new schedaVideoExtra(computer);
+        computer = new SchedaVideoExtra(computer);
     }
 
     public void aggiungiRaffreddamento() {
-        computer = new raffreddamentoExtra(computer);
+        computer = new RaffreddamentoExtra(computer);
     }
 
-    // 3. Scelta metodo di pagamento
     public void scegliPagamento(String metodo) {
         if (metodo.equalsIgnoreCase("carta")) {
             strategiaPagamento = new PagamentoCarta();
@@ -53,14 +46,12 @@ public class SistemaFacade {
         }
     }
 
-    // 4. Riepilogo ordine
     public void riepilogoOrdine() {
         System.out.println("=== RIEPILOGO ORDINE ===");
         System.out.println("Configurazione: " + computer.getDescrizione());
         System.out.println("Prezzo totale: " + computer.getPrezzo() + " euro");
     }
 
-    // 5. Conferma ordine
     public void confermaOrdine() {
         System.out.println("=== CONFERMA ORDINE ===");
         strategiaPagamento.EseguiPagamento(computer.getPrezzo());

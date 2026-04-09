@@ -1,6 +1,6 @@
 package Esercizio_Serio_facade.Decorator;
 
-interface Computer
+public interface Computer
 {
     String getDescrizione();
     double getPrezzo();

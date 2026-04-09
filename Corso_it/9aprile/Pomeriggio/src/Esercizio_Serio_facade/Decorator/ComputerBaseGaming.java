@@ -1,6 +1,6 @@
 package Esercizio_Serio_facade.Decorator;
 //classe che implementa l'interfaccia computer e rappresenta un computer base gaming
-class ComputerBaseGaming implements Computer
+public class ComputerBaseGaming implements Computer
 {
     @Override
     public String getDescrizione() {

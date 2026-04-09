@@ -1,10 +1,10 @@
 package Esercizio_Serio_facade.Decorator;
 
 //extra computer raffreddamento
- class raffreddamentoExtra extends ComputerExtraDecorator
+public  class RaffreddamentoExtra extends ComputerExtraDecorator
 {
 
-    raffreddamentoExtra(Computer computer) {
+    public RaffreddamentoExtra(Computer computer) {
         super(computer);
     }
 

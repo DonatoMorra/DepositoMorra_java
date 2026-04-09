@@ -1,6 +1,6 @@
 package Esercizio_Serio_facade.Decorator;
 
- abstract class ComputerExtraDecorator implements Computer
+public  abstract class ComputerExtraDecorator implements Computer
 {   
     //chiamata al computer
     protected Computer computer;

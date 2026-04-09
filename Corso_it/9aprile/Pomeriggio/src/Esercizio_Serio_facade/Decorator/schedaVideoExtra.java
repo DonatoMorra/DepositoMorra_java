@@ -1,10 +1,10 @@
 package Esercizio_Serio_facade.Decorator;
 
 //extra computer scheda video
- class schedaVideoExtra extends ComputerExtraDecorator
+public  class SchedaVideoExtra extends ComputerExtraDecorator
 {
 
-    schedaVideoExtra(Computer computer) {
+    public SchedaVideoExtra(Computer computer) {
         super(computer);
     }
 
