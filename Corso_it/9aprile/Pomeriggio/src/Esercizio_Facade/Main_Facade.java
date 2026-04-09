@@ -1,9 +1,9 @@
 package Esercizio_Facade;
 
 public class Main_Facade 
-{
+{}
+    /* 
     public static void main(String[] args) {
-
         System.out.println("--------------------------------------------------");
         System.out.println("Luci: ");
         //facade luci
@@ -19,5 +19,6 @@ public class Main_Facade
 
         System.out.println("--------------------------------------------------");
     }
-    
 }
+
+*/
