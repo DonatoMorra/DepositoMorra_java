@@ -1,5 +1,6 @@
 package Esercizio_Facade;
 
+//classi che rappresentano i sottosistemi
 class Bios
 {
    void inizializza()
@@ -24,7 +25,7 @@ class SistemaOperativo
    }
 }
 
-
+//classe Facade dove richiamo i metodi dei sottosistemi
 class ComputerFacade
 {
     void accendiComputer()
