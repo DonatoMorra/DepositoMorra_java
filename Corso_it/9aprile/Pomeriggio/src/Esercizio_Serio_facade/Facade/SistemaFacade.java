@@ -1,7 +1,7 @@
-package Esercizio_Facade.facade;
+package Esercizio_Serio_facade.Facade;
 
-import esercizio_serio_facade.decorator.*;
-import esercizio_serio_facade.strategy.*;
+import Esercizio_Serio_facade.Decorator.*;
+import Esercizio_Serio_facade.Strategy.*;
 
 public class SistemaFacade {
 
@@ -47,13 +47,13 @@ public class SistemaFacade {
     }
 
     public void riepilogoOrdine() {
-        System.out.println("=== RIEPILOGO ORDINE ===");
+        System.out.println("---RIEPILOGO ORDINE---");
         System.out.println("Configurazione: " + computer.getDescrizione());
         System.out.println("Prezzo totale: " + computer.getPrezzo() + " euro");
     }
 
     public void confermaOrdine() {
-        System.out.println("=== CONFERMA ORDINE ===");
+        System.out.println("---CONFERMA ORDINE---");
         strategiaPagamento.EseguiPagamento(computer.getPrezzo());
         System.out.println("Ordine completato!");
     }

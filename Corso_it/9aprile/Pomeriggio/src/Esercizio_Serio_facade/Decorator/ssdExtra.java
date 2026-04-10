@@ -1,6 +1,6 @@
 package Esercizio_Serio_facade.Decorator;
 //extra computer ssd
-public  class SsdExtra extends ComputerExtraDecorator
+public class SsdExtra extends ComputerExtraDecorator
 {
 
     public SsdExtra(Computer computer) {

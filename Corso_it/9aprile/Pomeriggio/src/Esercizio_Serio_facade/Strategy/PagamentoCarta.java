@@ -1,4 +1,4 @@
-package Esercizio_Serio_facade.strategy;
+package Esercizio_Serio_facade.Strategy;
 
 public class PagamentoCarta implements StrategiaPagamento {
     @Override

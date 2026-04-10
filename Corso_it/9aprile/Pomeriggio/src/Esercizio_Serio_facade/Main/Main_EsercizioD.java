@@ -1,6 +1,6 @@
-package esercizio_serio_facade.main;
+package Esercizio_Serio_facade.Main;
 
-import esercizio_serio_facade.facade.SistemaFacade;
+import Esercizio_Serio_facade.Facade.SistemaFacade;
 import java.util.Scanner;
 
 public class Main_EsercizioD {
